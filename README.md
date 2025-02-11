@@ -42,10 +42,23 @@ AI-based image segmentation for autonomous vehicles using the Cityscapes dataset
 
 ## API Example
 
-**POST** to `/segmentation/`:
+The API exposes a **GET** endpoint to perform image segmentation. You can send the image as **binary data** directly to the endpoint `/predict`.
 
-**Request body**:
+### Request
+
+Send the image as **binary data** using the **GET** method to the endpoint `/predict`:
+
+**Example request**:
+
+- You need to send the image in the request body as **binary content**.
+
+### Response
+
+The response will return the segmentation mask as a base64 encoded image:
+
 ```json
 {
+  "api_version": "1.0",
+  "model_name": "VGG16_UNet",
   "image_base64": "iVBORw0KGgoAAAANSUhEUgAAA..."
 }
