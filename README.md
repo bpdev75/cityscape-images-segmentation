@@ -29,16 +29,16 @@ AI-based image segmentation for autonomous vehicles using the Cityscapes dataset
 ## Usage
 
 ### Run the FastAPI backend:
-    ```bash
-    uvicorn api.api:app --reload
-    ```
-    The API will be available at [http://localhost:8000](http://localhost:8000).
+```bash
+uvicorn api.api:app --reload
+```
+The API will be available at [http://localhost:8000](http://localhost:8000).
 
 ### Run the Streamlit frontend:
-    ```bash
-    streamlit run frontend/app.py
-    ```
-    The frontend will be available at [http://localhost:8501](http://localhost:8501).
+```bash
+streamlit run frontend/app.py
+```
+The frontend will be available at [http://localhost:8501](http://localhost:8501).
 
 ## API Example
 
@@ -62,3 +62,4 @@ The response will return the segmentation mask as a base64 encoded image:
   "model_name": "VGG16_UNet",
   "image_base64": "iVBORw0KGgoAAAANSUhEUgAAA..."
 }
+```
