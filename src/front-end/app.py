@@ -5,7 +5,7 @@ import io
 from PIL import Image
 
 # Configuration de l'API
-API_URL = "http://localhost:8000/predict"
+API_URL = "https://cityscape-segmentation-api-cb52023cf02a.herokuapp.com/predict"
 
 st.set_page_config(layout="wide")
 
