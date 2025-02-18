@@ -1,6 +1,5 @@
 from collections import defaultdict
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
-from segmentation_models import get_preprocessing
 import numpy as np
 
 labels = [
@@ -233,6 +232,7 @@ def preprocess_mask(mask_path, target_size, num_classes):
 
 def preprocess_image_func(model):
     if model.backbone:
+        from segmentation_models import get_preprocessing
         return  get_preprocessing(model.backbone)
     return lambda img: img / 255.0
     
