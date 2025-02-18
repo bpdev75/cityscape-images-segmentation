@@ -1,7 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Conv2D, UpSampling2D, MaxPool2D, BatchNormalization, Activation, Concatenate, Input, Conv2DTranspose
 from tensorflow.keras import Model
-from segmentation_models import Unet, FPN
 
 def conv_block(inputs, filters, pool=False):
     x = Conv2D(filters, 3, padding="same")(inputs)
@@ -93,6 +92,7 @@ def build_vgg16_unet(input_shape, num_classes):
     Returns:
         Model: Modèle compilé U-Net basé sur VGG16.
     """
+    from segmentation_models import Unet
     backbone = "vgg16"
     model = Unet(backbone, 
         classes=num_classes, 
@@ -117,6 +117,7 @@ def build_mobilenet_fpn(input_shape, num_classes):
     Returns:
         Model: Modèle compilé FPN basé sur MobileNet.
     """
+    from segmentation_models import FPN
     backbone = "mobilenet"
     model = FPN(backbone, 
         classes=num_classes, 
