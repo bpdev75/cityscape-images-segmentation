@@ -7,7 +7,7 @@ from keras.utils import img_to_array
 from PIL import Image
 import io
 import base64
-from src.models.unet_models import build_vgg16_unet
+from src.models.unet_models import build_unet_mini
 from src.preprocessing.preprocessing import category_name_to_id, category_id_to_colors
 from src.predictions.predictions import predict_mask
 
@@ -20,8 +20,8 @@ API_VERSION = "1.0"
 app = FastAPI()
 
 # Chargement du model
-model = build_vgg16_unet(input_shape, num_classes)
-checkpoint_path = f"models/model_{model.name}_best_weights.keras"
+model = build_unet_mini(input_shape, num_classes)
+checkpoint_path = f"weights/model_{model.name}_best_weights.keras"
 model.load_weights(checkpoint_path)
 
 
